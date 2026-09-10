@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f5fb;
+  color: #20283f;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+.label {
+  color: #6254ce;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(32px, 6vw, 48px);
+}
+
+h2,
+h3 {
+  margin-top: 0;
+}
+
+p {
+  color: #586277;
+}
+
+section {
+  margin-bottom: 24px;
+  padding: 26px;
+  background: white;
+  border: 1px solid #e1e5ef;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px #28365508;
+}
+
+.toolbar,
+.section-heading,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-heading {
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+button {
+  padding: 11px 17px;
+  border: 0;
+  border-radius: 10px;
+  background: #6254ce;
+  color: white;
+  font: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.94);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:focus-visible {
+  outline: 3px solid #a89cf4;
+  outline-offset: 3px;
+}
+
+.secondary {
+  background: #eeecfb;
+  color: #5145ac;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+article {
+  min-width: 0;
+  padding: 20px;
+  background: #fafbff;
+  border: 1px solid #e4e7f0;
+  border-radius: 14px;
+}
+
+article p {
+  margin: 10px 0;
+}
+
+strong {
+  color: #6254ce;
+  font-size: 30px;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #e9edf4;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.status.running {
+  background: #fff0ca;
+  color: #805400;
+}
+
+.status.completed {
+  background: #d9f5e6;
+  color: #17613d;
+}
+
+.status.failed {
+  background: #ffe2e5;
+  color: #a02c3c;
+}
+
+.error {
+  color: #a02c3c;
+  font-size: 13px;
+}
+
+pre {
+  margin-bottom: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #354365;
+  font-size: 14px;
+}
+
+#message {
+  padding: 12px;
+  background: #f0eefc;
+  border-radius: 10px;
+}
+
+@media (max-width: 550px) {
+  main {
+    padding: 24px 12px;
+  }
+
+  section {
+    padding: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar button {
+    width: 100%;
+  }
+}

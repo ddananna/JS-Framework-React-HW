@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async Task Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="label">Bagauova Danara</span>
+      <h1>Async Task Lab</h1>
+      <p>Closures, promises, and the event loop in action.</p>
+    </header>
+
+    <section>
+      <h2>Task dashboard</h2>
+
+      <div class="toolbar">
+        <button id="run-all">Run All Tasks</button>
+        <button id="compare" class="secondary">
+          Compare Sequential & Concurrent
+        </button>
+        <button id="reset-all" class="secondary">Reset All</button>
+      </div>
+
+      <p id="message" role="status">Ready to start.</p>
+      <div id="tasks" class="grid"></div>
+    </section>
+
+    <section>
+      <h2>Execution time</h2>
+
+      <div class="grid">
+        <article>
+          <h3>Sequential</h3>
+          <strong id="sequential-time">—</strong>
+          <p>Tasks run one after another.</p>
+        </article>
+
+        <article>
+          <h3>Concurrent</h3>
+          <strong id="concurrent-time">—</strong>
+          <p>All tasks start together.</p>
+        </article>
+      </div>
+
+      <p id="comparison">
+        Compare both methods using the same simulated delays.
+      </p>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Event Loop Demo</h2>
+        <button id="event-demo">Run Event Loop Demo</button>
+      </div>
+
+      <div class="grid">
+        <article>
+          <h3>Expected output</h3>
+          <pre id="expected"></pre>
+        </article>
+
+        <article>
+          <h3>Actual output</h3>
+          <pre id="actual">Run the demo to see the output.</pre>
+        </article>
+      </div>
+
+      <p>
+        <b>Call Stack → Microtask Queue → Task Queue → Event Loop</b>
+      </p>
+      <p>
+        Synchronous code runs on the call stack first. When it is empty,
+        microtasks run, including Promise callbacks and the continuation
+        after await. The event loop then allows timer tasks to run,
+        checking microtasks again after each task.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
