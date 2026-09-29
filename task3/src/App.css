@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f3f7fd;
+  color: #1f3151;
+  font-family: Arial, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  min-height: 44px;
+  border: 1px solid #cbd8eb;
+  border-radius: 10px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  color: #1f3151;
+  background: white;
+}
+
+button {
+  padding: 10px 16px;
+  background: #edf3ff;
+  color: #244fa0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #dce9ff;
+}
+
+button.primary {
+  color: white;
+  background: #285ed7;
+  border-color: #285ed7;
+}
+
+button.primary:hover {
+  background: #1c49ad;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #82adff;
+  outline-offset: 3px;
+}
+
+.dashboard {
+  max-width: 1100px;
+  margin: auto;
+  padding: 48px 24px;
+}
+
+header {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #285ed7;
+}
+
+h1 {
+  margin: 12px 0;
+  font-size: clamp(30px, 5vw, 42px);
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: 21px;
+}
+
+header p,
+.session-box p {
+  color: #596b85;
+  line-height: 1.5;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stats > div,
+.panel,
+.course-card {
+  background: white;
+  border: 1px solid #dce5f2;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px #25477b08;
+}
+
+.stats > div {
+  padding: 20px;
+}
+
+.stats span {
+  display: block;
+  color: #596b85;
+  font-size: 14px;
+}
+
+.stats strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 30px;
+  color: #285ed7;
+}
+
+.panel {
+  padding: 24px;
+  margin-bottom: 30px;
+}
+
+.add-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  align-items: end;
+  gap: 14px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.toolbar h2 {
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.course-card {
+  padding: 22px;
+  overflow-wrap: anywhere;
+}
+
+.course-card[hidden] {
+  display: none;
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.category {
+  background: #edf3ff;
+  color: #2855a6;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.delete {
+  background: transparent;
+  border: none;
+  color: #ac3546;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.delete:hover {
+  background: #fff0f2;
+}
+
+.session-box {
+  text-align: center;
+  background: #f5f8ff;
+  border-radius: 12px;
+  padding: 20px 12px;
+  margin: 20px 0;
+}
+
+.session-box > span {
+  font-size: 14px;
+  color: #596b85;
+}
+
+.session-box strong {
+  display: block;
+  margin: 8px 0;
+  font-size: 36px;
+  color: #285ed7;
+}
+
+.session-box p {
+  font-size: 13px;
+  margin: 0;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-actions .primary {
+  flex: 1;
+}
+
+.completed {
+  color: #23734b;
+  margin: 16px 0 0;
+  font-size: 14px;
+}
+
+.empty {
+  padding: 30px;
+  text-align: center;
+  background: white;
+  border: 1px dashed #bacbe3;
+  border-radius: 14px;
+  color: #596b85;
+}
+
+@media (max-width: 900px) {
+  .course-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .add-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .add-form > button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 28px 16px;
+  }
+
+  .course-grid,
+  .add-form {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stats > div {
+    padding: 14px 10px;
+  }
+
+  .stats span {
+    font-size: 12px;
+  }
+
+  .toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+
+  .filters label {
+    flex: 1;
+  }
+}
