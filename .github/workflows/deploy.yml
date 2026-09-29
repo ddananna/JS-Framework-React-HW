@@ -1,4 +1,4 @@
-name: Deploy Task 2
+name: Deploy Tasks
 
 on:
   push:
@@ -31,13 +31,45 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Install dependencies
+      - name: Install Task 2
         working-directory: task2
         run: npm ci
 
-      - name: Build
+      - name: Build Task 2
         working-directory: task2
-        run: npm run build
+        run: npm run build -- --base=/JS-Framework-React-HW/task2/
+
+      - name: Install Task 3
+        working-directory: task3
+        run: npm ci
+
+      - name: Build Task 3
+        working-directory: task3
+        run: npm run build -- --base=/JS-Framework-React-HW/task3/
+
+      - name: Combine websites
+        run: |
+          mkdir -p _site/task2 _site/task3
+          cp -a task2/dist/. _site/task2/
+          cp -a task3/dist/. _site/task3/
+
+          cat > _site/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <title>React Homework</title>
+            </head>
+            <body>
+              <h1>React Homework</h1>
+              <ul>
+                <li><a href="./task2/">Task 2</a></li>
+                <li><a href="./task3/">Task 3</a></li>
+              </ul>
+            </body>
+          </html>
+          HTML
 
       - name: Configure Pages
         uses: actions/configure-pages@v6
@@ -45,7 +77,7 @@ jobs:
       - name: Upload website
         uses: actions/upload-pages-artifact@v5
         with:
-          path: task2/dist
+          path: _site
 
       - name: Deploy
         id: deployment
