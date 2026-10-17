@@ -1,3 +1,4 @@
+
 name: Deploy Tasks
 
 on:
@@ -31,6 +32,7 @@ jobs:
         with:
           node-version: "22"
 
+      # Task 2
       - name: Install Task 2
         working-directory: task2
         run: npm ci
@@ -39,6 +41,7 @@ jobs:
         working-directory: task2
         run: npm run build -- --base=/JS-Framework-React-HW/task2/
 
+      # Task 3
       - name: Install Task 3
         working-directory: task3
         run: npm ci
@@ -47,11 +50,23 @@ jobs:
         working-directory: task3
         run: npm run build -- --base=/JS-Framework-React-HW/task3/
 
+      # Midterm
+      - name: Install Midterm
+        working-directory: midterm
+        run: npm ci
+
+      - name: Build Midterm
+        working-directory: midterm
+        run: npm run build -- --base=/JS-Framework-React-HW/midterm/
+
+      # Combine all websites
       - name: Combine websites
         run: |
-          mkdir -p _site/task2 _site/task3
+          mkdir -p _site/task2 _site/task3 _site/midterm
+
           cp -a task2/dist/. _site/task2/
           cp -a task3/dist/. _site/task3/
+          cp -a midterm/dist/. _site/midterm/
 
           cat > _site/index.html <<'HTML'
           <!DOCTYPE html>
@@ -66,6 +81,7 @@ jobs:
               <ul>
                 <li><a href="./task2/">Task 2</a></li>
                 <li><a href="./task3/">Task 3</a></li>
+                <li><a href="./midterm/">Midterm</a></li>
               </ul>
             </body>
           </html>
