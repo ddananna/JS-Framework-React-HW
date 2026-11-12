@@ -67,6 +67,22 @@ jobs:
         working-directory: task5
         run: npm run build -- --base=/JS-Framework-React-HW/task5/
 
+      # Task 6 (Firebase config comes from repository secrets at build time)
+      - name: Install Task 6
+        working-directory: task6
+        run: npm install
+
+      - name: Build Task 6
+        working-directory: task6
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+        run: npm run build -- --base=/JS-Framework-React-HW/task6/
+
       # Midterm
       - name: Install Midterm
         working-directory: midterm
@@ -77,18 +93,21 @@ jobs:
         run: npm run build -- --base=/JS-Framework-React-HW/midterm/
 
       # GitHub Pages has no rewrite rules. Serving index.html as 404.html lets
-      # deep links such as /task5/items/item-3 load the router instead of a 404.
-      - name: Add SPA fallback for Task 5
-        run: cp task5/dist/index.html task5/dist/404.html
+      # deep links such as /task5/items/item-3 or /task6/profile load the router.
+      - name: Add SPA fallbacks
+        run: |
+          cp task5/dist/index.html task5/dist/404.html
+          cp task6/dist/index.html task6/dist/404.html
 
       - name: Combine websites
         run: |
-          mkdir -p _site/task2 _site/task3 _site/task4 _site/task5 _site/midterm
+          mkdir -p _site/task2 _site/task3 _site/task4 _site/task5 _site/task6 _site/midterm
 
           cp -a task2/dist/. _site/task2/
           cp -a task3/dist/. _site/task3/
           cp -a task4/dist/. _site/task4/
           cp -a task5/dist/. _site/task5/
+          cp -a task6/dist/. _site/task6/
           cp -a midterm/dist/. _site/midterm/
 
           cp site/index.html _site/index.html
