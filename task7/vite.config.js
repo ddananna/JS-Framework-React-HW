@@ -3,9 +3,6 @@ import react from '@vitejs/plugin-react';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Writes dist/sw.js from service-worker/sw-template.js after each build.
-// It fills in a unique cache version and the list of built files to precache.
-// Old caches are removed by the service worker when the new version activates.
 function serviceWorkerPlugin() {
   let root = process.cwd();
   let outDir = path.resolve('dist');
@@ -35,15 +32,14 @@ function serviceWorkerPlugin() {
       const version = Date.now().toString(36);
       const template = fs.readFileSync(path.resolve(root, 'service-worker/sw-template.js'), 'utf8');
       const output = template
-        .replace('__CACHE_VERSION__', version)
-        .replace('__PRECACHE_URLS__', JSON.stringify(precache));
+        .replaceAll('__CACHE_VERSION__', version)
+        .replaceAll('__PRECACHE_URLS__', JSON.stringify(precache));
 
       fs.writeFileSync(path.join(outDir, 'sw.js'), output);
     },
   };
 }
 
-// base is overridden per deployment with --base (GitHub Pages sub-path).
 export default defineConfig({
   plugins: [react(), serviceWorkerPlugin()],
   base: '/',
