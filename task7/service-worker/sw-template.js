@@ -1,17 +1,3 @@
-// Service worker template. vite.config.js replaces __CACHE_VERSION__ and __PRECACHE_URLS__.
-//
-// Lifecycle
-//   install   -> precaches the app shell (JS, CSS, HTML, icons, manifest, offline page)
-//   activate  -> deletes caches from older versions
-//   update    -> a new version waits until the user clicks "Update now" (SKIP_WAITING)
-//
-// Runtime strategies
-//   page navigations -> network-first. Visited pages are stored and served offline.
-//                       Unvisited pages fall back to offline.html.
-//   /api/ requests   -> network-first, falls back to cache (max 40 entries, 7 days).
-//   images and fonts -> cache-first (max 80 entries, 30 days).
-//   other origins    -> not touched (Firebase, Google sign-in).
-//   requests with an Authorization header are never cached.
 
 const VERSION = '__CACHE_VERSION__';
 const PRECACHE_PATHS = __PRECACHE_URLS__;
