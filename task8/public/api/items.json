@@ -1,0 +1,208 @@
+{
+  "items": [
+    {
+      "id": "item-1",
+      "name": "Mechanical Keyboard",
+      "category": "Electronics",
+      "price": 129.99,
+      "description": "Tenkeyless layout with hot-swappable switches.",
+      "status": "available",
+      "quantity": 1,
+      "location": "Warehouse A",
+      "owner": "Ada Lovelace",
+      "tags": [
+        "electronics"
+      ],
+      "notes": "Checked during the last stock count.",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-2",
+      "name": "Ergonomic Chair",
+      "category": "Furniture",
+      "price": 349,
+      "description": "Mesh back with adjustable lumbar support.",
+      "status": "reserved",
+      "quantity": 8,
+      "location": "Warehouse B",
+      "owner": "Grace Hopper",
+      "tags": [
+        "furniture"
+      ],
+      "notes": "",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-3",
+      "name": "Standing Desk",
+      "category": "Furniture",
+      "price": 499.5,
+      "description": "Electric height adjustment with memory presets.",
+      "status": "completed",
+      "quantity": 15,
+      "location": "Showroom",
+      "owner": "Alan Turing",
+      "tags": [
+        "furniture"
+      ],
+      "notes": "",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-4",
+      "name": "USB-C Hub",
+      "category": "Electronics",
+      "price": 39.9,
+      "description": "7-in-1 hub with HDMI 4K output.",
+      "status": "available",
+      "quantity": 22,
+      "location": "Warehouse A",
+      "owner": "Ada Lovelace",
+      "tags": [
+        "electronics"
+      ],
+      "notes": "",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-5",
+      "name": "Noise-Cancelling Headphones",
+      "category": "Audio",
+      "price": 219,
+      "description": "Over-ear with adaptive ANC and multipoint Bluetooth.",
+      "status": "reserved",
+      "quantity": 4,
+      "location": "Warehouse B",
+      "owner": "Grace Hopper",
+      "tags": [
+        "audio"
+      ],
+      "notes": "Checked during the last stock count.",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-6",
+      "name": "Desk Lamp",
+      "category": "Lighting",
+      "price": 45,
+      "description": "LED lamp with three color temperatures.",
+      "status": "completed",
+      "quantity": 11,
+      "location": "Showroom",
+      "owner": "Alan Turing",
+      "tags": [
+        "lighting"
+      ],
+      "notes": "",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-7",
+      "name": "Monitor 27\"",
+      "category": "Electronics",
+      "price": 289,
+      "description": "27-inch 1440p IPS panel with USB-C input.",
+      "status": "available",
+      "quantity": 18,
+      "location": "Warehouse A",
+      "owner": "Ada Lovelace",
+      "tags": [
+        "electronics"
+      ],
+      "notes": "",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-8",
+      "name": "Bluetooth Speaker",
+      "category": "Audio",
+      "price": 79,
+      "description": "Waterproof speaker with a 12-hour battery.",
+      "status": "reserved",
+      "quantity": 25,
+      "location": "Warehouse B",
+      "owner": "Grace Hopper",
+      "tags": [
+        "audio"
+      ],
+      "notes": "",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-9",
+      "name": "Floor Lamp",
+      "category": "Lighting",
+      "price": 120,
+      "description": "Dimmable floor lamp with a reading arm.",
+      "status": "completed",
+      "quantity": 7,
+      "location": "Showroom",
+      "owner": "Alan Turing",
+      "tags": [
+        "lighting"
+      ],
+      "notes": "Checked during the last stock count.",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-10",
+      "name": "Notebook Set",
+      "category": "Stationery",
+      "price": 18.5,
+      "description": "Three dotted A5 notebooks.",
+      "status": "available",
+      "quantity": 14,
+      "location": "Warehouse A",
+      "owner": "Ada Lovelace",
+      "tags": [
+        "stationery"
+      ],
+      "notes": "",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-11",
+      "name": "Fountain Pen",
+      "category": "Stationery",
+      "price": 64,
+      "description": "Medium nib with an aluminum body.",
+      "status": "reserved",
+      "quantity": 21,
+      "location": "Warehouse B",
+      "owner": "Grace Hopper",
+      "tags": [
+        "stationery"
+      ],
+      "notes": "",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-12",
+      "name": "Bookshelf",
+      "category": "Furniture",
+      "price": 210,
+      "description": "Five-tier oak shelf, flat-pack.",
+      "status": "completed",
+      "quantity": 3,
+      "location": "Showroom",
+      "owner": "Alan Turing",
+      "tags": [
+        "furniture"
+      ],
+      "notes": "",
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    }
+  ]
+}
